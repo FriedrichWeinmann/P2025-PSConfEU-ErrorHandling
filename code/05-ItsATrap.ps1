@@ -37,6 +37,10 @@ code "$presentationRoot\resources\trap7-LetsContinue.ps1"
 
 # X) Default Error Handling in Scripts
 code "$presentationRoot\resources\trap8-ScriptDefaults.ps1"
+& "$presentationRoot\resources\trap8-ScriptDefaults.ps1"
+$error[0].ScriptStackTrace
+$error[0]
+$error[1].ScriptStackTrace
 
 # Next: Preferential Treatment
 code "$presentationRoot\06-Preferences.ps1"

@@ -15,7 +15,16 @@ function Get-Triple {
 
 	process {
 		foreach ($numberEntry in $Number) {
-			if (2 -eq $numberEntry) { throw "2 is evil!" }
+			if (2 -eq $numberEntry) {
+				$PSCmdlet.ThrowTerminatingError(
+					[System.Management.Automation.ErrorRecord]::new(
+						[System.ArgumentException]::new("2 is evil"),
+						"2IsEvil",
+						[System.Management.Automation.ErrorCategory]::InvalidArgument,
+						$numberEntry
+					)
+				)
+			}
 			$numberEntry * 3
 		}
 	}

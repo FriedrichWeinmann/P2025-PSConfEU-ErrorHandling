@@ -17,6 +17,10 @@ Get-Preference
 Get-Preference -ErrorAction Stop
 Get-Preference -ErrorAction Ignore
 
+$ErrorActionPreference = 'Stop'
+Get-Preference
+$ErrorActionPreference = 'Continue'
+
 function Get-EAParameter {
 	[CmdletBinding()]
 	param ()

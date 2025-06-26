@@ -12,4 +12,3 @@ trap {
 #region Functions
 
 #endregion Functions
-
